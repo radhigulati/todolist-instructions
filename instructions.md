@@ -1,30 +1,69 @@
-# Todo List Project
+# To-do List Project
+## Introduction
+In this coding tutorial, you will be creating [this](https://youtu.be/hSojFVFGOcw) web application. Throughout the tutprial you will be learning how to:
+
+* Use the command line
+* Create and manipulate directories and files through the Terminal
+* Commit and push changes to GitHub from the command line
+* Write HTML/CSS/JavaScript
+* Add the project to CircleCI, and add to the CircleCI config file
+* Create an environment variable
+* Push your application to Netlify
+* Create tests with Cypress
+* Store test recordings as artifacts in CircleCI
+
+The goal of this project is to help you understand how web applications are created while using CircleCI for CI and Continuous Deployment. This project is  simple compared to what teams of developers will work on, but it should still give you some insight on how to create a web application while integrating with other tools.
+
+You will see **Learning notes** within the instructions. These notes are not tasks for you to do. They are available for learning purposes and to supplement concepts within the tutorial
+
+I let you know when it's time to push to GitHub. When you see ```git commit -m "create a description here"``` make sure to add a description between the quotation marks. The description should describe the changes you have just made.
+ 
+Let's begin! 
 
 <h2> Clone the project </h2>
-Go to [this](https://github.com/radhigulati/todolistactivity) repository, and clone the project. 
 
-To clone the project, go to ```code``` button on the repo page, and copy the url for ssh.
+**TASK**: Go to [this](https://github.com/radhigulati/todolistactivity) repository, to clone the project. 
 
-Open up your terminal, and check which directory you are in with the command ```pwd```.
+**TASK**: To clone the project, go to the green ```code``` button on the repo page, and copy the url for SSH.
 
-You should be in the ```projects``` directory. If you aren't, and you are in your home directory (```/Users/radhika```) then type in the command ```ls``` to see the list of directories you can access.
+**TASK**: Open up your terminal, and check which directory you are in with the command ```pwd```.
 
-You should see the ```projects``` directory, and you can use the command ```cd projects``` to access this directory.
+**TASK**: You should be in the ```projects``` directory. If you aren't, and you are in your home directory (```/Users/radhika```) then type in the command ```ls``` to see the list of directories you can access.
 
-Copy the ssh url from the GitHub project page to clone the project locally. You will find the ssh url to copy when you click on the green code button on the project page. Type the command ```git clone [url]``` (when typing in the ssh url don't use the brackets).
+**TASK**: You should see the ```projects``` directory, and you can use the command ```cd projects``` to access this directory.
 
-Once you've cloned the project, you should see it in your projects folder. Type the command ```ls``` to list your files. 
+Type the command ```git clone git@github.com:radhigulati/todolistactivity.git```.
+
+**TASK**: Once you've cloned the project, you should see it in your projects folder. Type the command ```ls``` to list your files. 
 
 <h2> Add project to GitHub </h2>
 Let's create the GitHub repo before we get started.
 
-To add the project to GitHub, check out the GitHub tutorial and follow the instructions to create a repo.
+To add the project to GitHub, follow the instructions below:
 
-Then type the command ```cd todolist``` to access the project. 
+<h2>Add project to GitHub</h2>
 
-Now, you are in the project directory. Let's open this project within our text editor. Remember, if you are using vscode, you can type the command ```code .``` within your terminal and open the project from there.
+<span style="color:red"> **TASK:** </span>Let's navigate to GitHub and create a new project. Within GitHub, navigate to the ```new``` button to create a new project. For the ```repository name``` use ```todolist```. You can add a description that says ```This project is a beginner git project.``` Make the project ```public```. Initialize this project with a ```README file```. Then click ```create repository```.
 
-Once you've opened the project, let's take a look at what it looks like on a web page. If you are using VScode, right click in the html file and choose ```open in live server```. When you do this, the file will open up in your browser, and you should see see a web page. You'll notice the web page is not complete, but we'll fix that! You can check out [this](https://youtu.be/hSojFVFGOcw) video to see what we are working towards.
+You have now created an empty repository with a README file within GitHub.
+
+<span style="color:red"> **TASK:** </span> Now, we need to point our local repository to the remote repository. To do that type the following command in your terminal (make sure you are in your project directory)
+```git remote add origin [repository url]```
+
+The ```repository url``` will be ```git@github.com:[your github username]/[name of repo].git```. For example, my url would be ```git@github.com:radhigulati/todolist.git```
+
+<span style="color:red"> **TASK:** </span> Let's push your project to GitHub. To do this, type the command ```git push -u origin main``` or ```git push -u origin master```
+if the branch name is still master.
+
+If you navigate to GitHub, you should see your file in GitHub!
+
+---
+
+Type the command ```cd todolist``` to access the project. 
+
+Now you are in the project directory. Let's open this project within our text editor. Remember, with VScode, you can type the command ```code .``` within your Terminal and open the project from there.
+
+Once you've opened the project, let's take a look at what it looks like on a web page. If you are using VScode, right click in the html file and choose ```open in live server```. When you do this, the file will open up in your browser, and you should see see a web page. You'll notice the web page is not complete, but we'll fix that! 
 
 If you go back to the text editor, you'll see a list of files. Let's go through these files and take a look at each one.
 
@@ -34,7 +73,7 @@ Let's first take a look at the ```index.html``` file. This is the html file for 
 
 An HTML element is defined by a start tag, some content, and an end tag. If we look at the HTML file in our text editor, we see this in action. 
 
-The first couple of lines in the file are ```<!DOCTYPE html> <html lang="en">```. A doctype or document type declaration is an instruction which tells the web browser about the markup language in which the current page is written. The Doctype is not an element or tag, it lets the browser know about the version of or standard of HTML or any other markup language that is being used in the document. In the case of our file, we are using HTML 5.
+> **Learning Note:** The first line in the file are ```<!DOCTYPE html> <html lang="en">```. A doctype or document type declaration is an instruction which tells the web browser about the markup language in which the current page is written. The Doctype is not an element or tag, it lets the browser know about the version of or standard of HTML or any other markup language that is being used in the document. In the case of our file, we are using HTML 5.
 
 > **Learning Note:** The ```lang``` attribute specifies the language of the element's content. Common examples are "en" for English, "es" for Spanish, "fr" for French and so on.
 
@@ -59,9 +98,9 @@ The ```<body>``` element contains all the contents of an HTML document, such as 
 
 Within the ```<body>``` tags in this html file, we have other tags that make up our web page.
 
-<h2> First Assignment</h2>
+<h2> Create a header tag</h2>
 
-The first assignment you need to do is create an ```<h1></h1>``` tag under the header tag in the html document. Within the ```<h1></h1>``` tag you will create the name of your project. This project is a Todo list, so you can name it "My Todo List" or something like that. [Here](https://www.w3schools.com/tags/tag_hn.asp) is an example of how to use the ```h1``` tag.
+The first assignment you need to do is create an ```<h1></h1>``` tag under the header tag in the html document. Within the ```<h1></h1>``` tag you will create the name of your project. This project is a Todo list, so you should name it "My Todo List." [Here](https://www.w3schools.com/tags/tag_hn.asp) is an example of how to use the ```h1``` tag.
 
 Once you've added your ```h1``` tag, open up this file in the live server again, and you should see the header on the web page.
 
@@ -71,21 +110,25 @@ The next tag we'll look at in the html file is the ```<form>``` tag.
 
 > **Learning Note:** The ```<form>``` tag is used to create an HTML form for user input.
 
-<h2> Second Assignment </h2>
+<h2> Create an input tag </h2>
 
-The ```input``` tag is used to specify an input field where the user can enter data. We need to create an HTML element for the input. To do this you are going to use the ```<input>``` tag. The ```type``` for this ```input``` tag is ```text```. Then you will also add a class of ```"todo-input```. Check out [this](https://www.w3schools.com/w3css/w3css_input.asp) example to get an idea of how to use the input tag.
+The ```input``` tag is used to specify an input field where the user can enter data. We need to create an HTML element for the input. To do this you are going to use the ```<input>``` tag. The ```type``` for this ```input``` tag is ```text```. Then you will also add a class of ```"todo-input"```. Check out [this](https://www.w3schools.com/w3css/w3css_input.asp) example to get an idea of how to use the input tag.
 
-Now check out the web page in your browser. You should see the input form now! If you try and type something in it, the text won't get processed just yet. 
+Now check out the web page in your browser. You should see the input form now! If you try and type something in it, the text won't get processed just yet. The rest of the HTML file is filled out for you. 
 
-The rest of the HTML file is filled out for you. 
+Add your changes to GitHub:
 
-Underneath the input, we see a button. The button is the right next to the input form on the webpage. 
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
+
+Underneath the input, we see a button. The button is right next to the input form on the webpage. 
 
 > **Learning Note:** The class attribute is often used to point to a class name in a style sheet. It can also be used by a JavaScript to access and manipulate elements with the specific class name.
 
 > **Learning Note:** The button tag has a type of submit. The type attribute specifies the type of button.
 
-Within the button tag, there is an ```span``` tag.
+Within the button tag, there is a ```span``` tag.
 
 > **Learning Note:** The HTML ```<span>``` tag is used for grouping and applying styles to inline elements.
 
@@ -117,16 +160,29 @@ As we go down the CSS file, we have more selectors and we are applying styles to
 
 Let's make a couple of changes to this file.
 
-<h2> Third Assignemnt </h3>
+<h2> Adding a background color </h3>
 
-Add a ```background-color``` element in the body selector. You can use [this](https://htmlcolorcodes.com/) color picker to find a HEX value for the ```background-color```. **Don't forget the ```#``` before the hex value.**  If you would like to use a ```background-image``` this is a little more complicated. You can take a look at the examples [here](https://www.w3schools.com/cssref/pr_background-image.asp) if you are interested.
+Add a ```background-color``` element in the body selector. You can use [this](https://htmlcolorcodes.com/) color picker to find a HEX value for the ```background-color```. **Don't forget the ```#``` before the hex value.**  
 
-<h2> Third Assignemnt </h2>
-On the web page, you will notice a button with a square. This is the button that will submit a todo item and a list will be created. Let's add some color to this button.
+Add your changes to GitHub:
 
-Under the form button selector add the ```color``` attribute, and add a hex value like ```#E29178``` as the value.
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
 
-When you refresh the page, you'll see that the button has color. The color changes as you hover over the button because of the ```form button:hover``` selector.
+<h2> Adding color to the form button </h2>
+On the web page, you will notice a button with a square. This is the button that will submit a todo item and a list will be created. Let's add some color to this button. 
+
+Under the form button selector add the ```color``` attribute, and add a hex value like (```#E29178```) as the value. It should look something like:
+
+     color:  #E29178; 
+When you refresh the page, you'll see that the button has color. The color changes as you hover over the button because of the ```form button:hover``` selector. The ```:hover``` selector is used to select elements when you mouse over them.
+
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
 
 We'll come back to the CSS once we've added some JavaScript.
 
@@ -135,25 +191,35 @@ JavaScript is a text-based programming language used both on the client-side and
 
 >**Learning Note:** The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects. That way, programming languages can connect to the page. A Web page is a document. This document can be either displayed in the browser window or as the HTML source. But it is the same document in both cases. The Document Object Model (DOM) represents that same document so it can be manipulated. The DOM is an object-oriented representation of the web page, which can be modified with a scripting language such as JavaScript.
 
-For this project, we are using vanilla JavaScript, but you can use different frameworks like ReactJS, VueJS, etc for different frontend JS frameworks or a framework like Node for backend programming. Both Node.js and React.js are JavaScript frameworks but they are entirely different concepts. The most significant difference between Node.js and React.js is React is used to create user applications, while Node.js is a back-end system. 
+For this project, we are using vanilla JavaScript. 
+
+> **Learning Note** You can use different frameworks like ReactJS, VueJS, etc for different frontend JS frameworks or a framework like Node for backend programming. Both Node.js and React.js are JavaScript frameworks but they are entirely different concepts. The most significant difference between Node.js and React.js is React is used to create user applications, while Node.js is a back-end system. 
 
 Let's take a look at the ```app.js``` file.
 
-We start off by creating a variable with ```const``` and setting them equal to specific elements. 
+We start off by creating variables with ```const``` and setting them equal to specific elements. 
 
 > **Learning Note:** The method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.
 
 > **Learning Note:** Variables defined with ```const``` behave like ```let``` variables, except they cannot be reassigned.
 
-<h2> Fourth Assignemnt </h2>
+<h2> Creating a querySelector </h2>
 
 ```const todoInput``` and ```const todoButton``` are set to the form input and button elements.
 
-We need to create a const variable for the ```todo-list``` as well. Go ahead and create another querySelector for the ```todo-list``` element. The const variable should be ```todoList```.
+We need to create a const variable for the ```todo-list``` as well. 
 
-The next section of the JavaScript is for the event listeners.
+**TASK:** Create another querySelector for the ```todo-list``` element. The const variable should be ```todoList```, and the selector passed to the querySelector method should be ```'.todo-list'```. This line should look exactly the same as lines 3 and 4 minus the const name change and selector name change.
 
-The ```addEventListener()``` method attaches an event handler to the specified element.
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
+
+The next section of the JavaScript is for the event listeners. The ```addEventListener()``` method attaches an event handler to the specified element.
+
+<h2> Creating an eventListener </h2>
 
 > **Learning Note:** Events are actions that happen when the user or browser manipulates a page. They play an important role as they can cause elements of a web page to change dynamically. For example, when the browser finishes loading a document, then a load event occurred. If a user clicks a button on a page, then a click event has happened. Many events can happen once, multiple times, or never. You also may not know when an event will happen, especially if it is user generated. In these scenarios, you need an event handler to detect when an event happens. This way, you can set up code to react to events as they happen on the fly. JavaScript provides an event handler in the form of the addEventListener() method. This handler can be attached to a specific HTML element you wish to monitor events for, and the element can have more than one handler attached.
 
@@ -173,39 +239,59 @@ The syntax for the eventlistener method is
 
 For the event listener already written, we've added a handler for the 'click' event by providing a callback function. The callback function will be ```addTodo``` which we've written below.
 
-Use the ```todoList```const variable to add the eventlistener to and call the function that is passed in, ```deleteCheck```.
+**TASK** Use ```todoList```as the target for the eventlistener, and call the function that is passed in, ```deleteCheck```. This line should be exactly the same as line 8 except you are changing the target and function names.
 
-If you right click on the web page and click ```inspect``` you can vist the console to interact with your app straight from the browser. 
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
+
+> **Learning Note:** If you right click on the web page and click ```inspect``` you can vist the console to interact with your app straight from the browser. 
 
 > **Learning Note:** Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser. DevTools can help you edit pages on-the-fly and diagnose problems quickly, which ultimately helps you build better websites, faster.
 
-I created a callback function called ```addTodo``` which is passed to the event listener ```todoButton```. ```todoButton```should be clickable so when you click on it and checkout your console you see that some even is firing. Since the function isn't fully written we are seeing an error every time we click. Let's fix this.
+I created a callback function called ```addTodo``` which is passed to the event listener ```todoButton```. ```todoButton```should be clickable so when you click on it and checkout your console you see that some event is firing. Since the function isn't fully written we are seeing an error every time we click. Let's fix this.
 
-<h2> Fifith Assignemnt </h2>
+<h2> Create an list element </h2>
 
-First, we created a ```div``` that will contain a list. Then we've added a ```class``` to that ```div``` called ```todo```. So when this element is being generated, it will look like ```<div class=todo></div>```
+First, we created a ```div``` that will contain a list. Then we've added a ```class``` to that ```div``` called ```todo```. So when this element is being generated, it will look like this ```<div class=todo></div>``` in HTML.
 Everytime a todo is created from the input form, we want to create a list. For this we are going to create a new ```li``` element everytime a todo is created.
 > **Learning Note:** ```li``` is list item in HTML.
 
-Under the comment that says ```create the li element``` create a ```const ```variable equal to the createElement method to create an ```li``` item.
+**TASK:** Under the comment that says ```create the li element``` on line 18,create a ```const ```variable with the name ```newTodo``` equal to the createElement method to create a ```li``` item. This line will exactly the same as line 16. The only changes will be the name of the ```const``` variable and the element being passed to ```createElement``` will be ```"li"```.
+
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
+
+---
 
 Each of these todo items will consist of the text that was inputted from the form. To grab that value we have to use the value of the ```todoInput```.
 
 We then will add a class for the``` todo-item``` then append that new todo to the ```todoDiv```.
 
-For the buttons we created two buttons with class names then we’ve appended each button to the ```todoDiv```.
+We create two buttons: a complete button and a delete button. Each time a new todo is created, a new complete button and a new delete button are created. When a new todo item is added to the ```div``` container, so are the two buttons.
 
 <h2> Sixth Assignemnt </h2>
 
-Each item in the todo list will have two buttons: a delete button, and complete button. These buttons also consist of icons from the fontawesome icon directory.
+Each item in the todo list will have two buttons: a delete button, and a complete button. These buttons also consist of icons from the fontawesome icon directory.
 
-Each complete button will be a button. Each button will have a check mark icon and they will be assigned a class called ```complete-btn```. Then we add it to the ```todoDiv```.
+Each complete button with have a check mark icon and they will be assigned a class called ```complete-btn```. Then we add it to the ```todoDiv```.
 
-**TASK:** Now, we want to do the same thing for the delete button. First, create a button element for the delete button (it will be the same way the complete button is written except call this ```const deleteButton```).
+**TASK:** Now, we want to do the same thing for the delete button. First, create a button element for the delete button (it will be the same way the complete button is written on line 23 except call this ```const deleteButton```).
 
 Then we add an icon to each delete button (which is already done for you).
 
-**TASK:** Next, assign a class for each delete button. Do this under the comment that says ```"add a new class to the delete button"```.
+**TASK:** Next, assign a class for each delete button. Do this under the comment that says ```"add a new class to the delete button"```. This line of code will look exactly the same as line 25 except you will use ```deleteBtn``` and you will ```add("delete-btn");```.
+
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
 
 Once the todo item is apart of the list, we can clear the input value from the form.
 
@@ -215,58 +301,82 @@ This is the ```addTodo``` function!
 
 If you check out the Todo list in your browser, you'll notice it's partly working. We can create a todo, but we can't delete it or mark it as complete. That's what we'll work on now.
 
-<h2> Seventh Assignemnt </h2>
+<h2> Giving the delete button functionality</h2>
 
-**TASK** Let's get the delete button working. Right now you see some code that is commented out. Go ahead and uncomment the first line right beneath the ```deleteCheck``` function to the bracket under ```todo.remove()```. To uncomment highlight those lines and use the shortcut ```cmd + /```. Save this and go back to your browswer to check out the Todo list.
+**TASK:** Let's get the delete button working. Right now you see some code that is commented out (lines with ```//``` before them). Go ahead and uncomment the first line right beneath the ```deleteCheck``` function to the bracket under ```todo.remove()``` lines 39-43. To uncomment highlight those lines and use the shortcut ```cmd + /```. Save this and go back to your browser to check out the Todo list.
 
 When you click on the trash can, a todo is deleted. 
 
-**TASK** Let's give that button some color. Go to the ```style.css``` file and go down to the selector for ```.delete-btn, .complete-btn```. We are going to add a ```background``` element and a ```border``` element here. Choose a color for the background and for the border add ```border: none;```. The border got rid of the black lines around the elements. 
+**TASK:** Let's give that delete button some color. Go to the ```style.css``` file and go down to the selector for ```.delete-btn, .complete-btn```. We are going to add a ```background``` element and add ```border``` element here. Choose a color for the background (remember this can be a HEX value from the color picker with the ```#``` before the value) and for the border add ```border: none;```. The border will get rid of the black lines around the button elements. 
+
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
 
 Now, let's get the completed button working!
 
-<h2> Eighth Assignemnt </h2>
+<h2> Giving the completed button functionality </h2>
 
-The completed button is going to be very similar to the delete button. The code you are going to write is going to check the first item in the classList array for the ```complete-btn``` class then you will assign a ```const todo``` to the parentElement of that item. Then we will ```toggle``` the ```completed``` element which is defined in our css. 
+The completed button is going to be very similar to the delete button. 
 
-**HINT:** For this piece of code write the exact ```if``` statement for the ```delete-btn``` but instead of ```'delete-btn'``` you will use ```'complete-btn'```.
+**TASK:** The code you are going to write is going to check the first item in the classList array for the ```complete-btn``` class then you will assign a ```const todo``` to the parentElement of that item. Then we will ```toggle``` the ```completed``` element which is defined in our css. 
 
-Instead of typing ```todo.remove()``` you will type in ```todo.classList.toggle('completed');```.
+**HINT:** For this piece of code write the exact ```if``` statement for the ```delete-btn```. You will follow lines 39-43 exactly, but instead of ```'delete-btn'``` you will use ```'complete-btn'```. Instead of typing ```todo.remove()``` you will type in ```todo.classList.toggle('completed');```.
+
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
 
 > **Learning Note:** The toggle method toggles between adding and removing one or more class names from the selected elements. This method checks each element for the specified class names. The class names are added if missing, and removed if already set - This creates a toggle effect.
 
-<h2> Ninth Assignemnt </h2>
+<h2> Makes CSS changes for our butoons </h2>
 
 Now let's add some elements to our CSS file.
 
-**TASK** Go down to the ```.completed``` selector and add a ```text-decoration: line-through;```.
+**TASK:** Go down to the ```.completed``` selector and add ```text-decoration: line-through;```.
 
 Now when you check out the app in your browser and click the completed button, you will see that item has a line through it. Let's add one more element to our CSS property.
 
-**TASK**  Add ```opacity: 0.5;``` to the ```.completed``` class. 
+**TASK:**  Add ```opacity: 0.5;``` to the ```.completed``` class. 
 
-Now when you click the completed button, the item has a line through and the opacity changes.
+Now when you click the completed button, the item has a line throught it and the opacity changes.
 
-This is all the code we will write for this project. Congrats!!
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
+
+This is all the code we will write for this project. Congrats on completing the coding exercise!! Now let's add our project to CircleCI!!
 
 <h2>CircleCI</h2>
-Something we haven't done yet is add our project to CircleCI. We were using version control to continuously integrate changes to GitHub but we didn't have CircleCI running. Let's do that before we start writing some tests.
+Something we haven't done yet is add our project to CircleCI. We were using version control to continuously integrate changes to GitHub but we didn't have CircleCI running. Let's do that before we start writing some tests. 
 
 Let's complete the config file. If you look under the ```.circleci``` folder you'll see the ```config.yml``` file.
 
-In this file, we are going to be adding a couple orbs, and we will fill out some job info. 
+In this file, we are going to be adding an orb, and we will fill out some job info. 
 
 We can see that we are using the Docker executor for our build job. This job is checking out our code from GitHub and running ```npm install``` to add some dependencies. 
 
-In the deploy job we'll specify a machine to work on, in this case we are using the docker executor again, because that is the easiest machine to work with for our use case. Then Netlify calls the specified command in the docker executor so we can deploy to Netlify. We'll add this environment variable later.
+In the deploy job we'll specify a machine to work on. In this case we are using the docker executor again, because that is the easiest machine to work with for our use case. Then Netlify calls the specified command in the docker executor so we can deploy to Netlify. We'll add this environment variable later.
 
-For our workflow we call our build job, and we then run three test jobs that will test our code across different versions of node. Honestly, this doesn't do much for our project because we aren't leveraging node but for demo purposes this is what it would look like if we did need to do this.
+For our workflow we call our build job, we run three test jobs that will test our code across different versions of node. 
 
-<h2> Tenth Assignemnt </h2>
+<h2> Test our code against another version of node </h2>
 
-**TASK** Add one more ```node/test``` job for version ```10.19.0``` and name the job ```test3```. Also, make sure it requires build like the other ```node/test``` jobs.
+**TASK** Add one more ```node/test``` job for version ```10.19.0``` and name the job ```test3```. Also, make sure it requires build like the other ```node/test``` jobs. This job will look exactly the same as ```test1``` and ```test2```. The only change will be the ```version``` of node you are testing against. 
 
-We then have our jobs for deploying to netflify and the only branch we'll deploy is the main branch.
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
+
+We then have our jobs for deploying to Netlify and the only branch we'll deploy is the main branch.
 
 The last job is for running our Cypress tests.
 
@@ -275,7 +385,7 @@ The last job is for running our Cypress tests.
 > **Learning Note** First: Cypress helps you set up and start writing tests every day while you build your application locally. 
 Later: After building up a suite of tests and integrating Cypress with your CI Provider, our Dashboard Service can record your test runs. You’ll never have to wonder: Why did this fail?
 
-Let's make sure our config file deploys to Netflify before we begin writing our Cypress tests.
+Let's make sure our config file deploys to Netlify before we begin writing our Cypress tests.
 
 <h2> Create a Netlify account </h2>
 
@@ -283,27 +393,26 @@ You should have created your Netlify account during the pre-work.
 
 Once you've signed up, you are going to create a "new site from Git". Connect your GitHub account, and choose the Todo list project from the list of repos.
 
-Go to ```site settings``` > ```build and deploy``` > ```add a build hook``` > copy the url
+Go to ```site settings``` > ```build and deploy``` > ```add a build hook``` > copy the url. This url is going to help us deploy to Netlify using CircleCI. Now, go to CircleCI. 
 
-This url is going to help us deploy to Netlify using CircleCI. Now, go to CircleCI. 
-
-Go to the project settings of the project and go to environment variables. 
-
-You are going to create an environment variable. Name the variable ```hook``` and add the url for the value.
+Go to the project settings of the project and click on environment variables. You are going to create an environment variable. Name the variable ```hook``` and add the url for the value.
 
 Go back to your config, and add the variable ```hook``` between the ```${}``` so it should look like ```${hook}```. Now, we can deploy our project to Netlify via CircleCI.
 
-Go ahead and add your changes to GitHub. CircleCI should be successful and you should be able to view your app live. 
+Add your changes to GitHub:
 
-You can find the url for where your project lives if you go to your Netlify project and click on the link at the top. If should looks like ```https://priceless-johnson-edbe3b.netlify.app```.
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
+CircleCI should be successful and you should be able to view your app live. 
+
+You can find the url for where your project lives if you go to your Netlify project and click on the link at the top. The url should look like ```https://priceless-johnson-edbe3b.netlify.app```.
 
 Congrats! You now have an application running on the web. 
 
 The last thing we need to do is add some Cypress tests. We don't want to write the YAML for Cypress in our config file so let's add the Cypress orb.
 
-Go to the [orbs page](https://circleci.com/developer/orbs?utm_source=gb&utm_medium=SEM&utm_campaign=SEM-gb-200-Eng-ni&utm_content=SEM-gb-200-Eng-ni-CircleCI-Orbs&utm_term=OrbRegistryLP&gclid=CjwKCAiAo5qABhBdEiwAOtGmbpVpBx2scJrXD-jErRj8YnhE6s9fDhSxWPcCMDOrVbR1dw4Z27Gj8hoCdI4QAvD_BwE) and find the Cypress orb.
-
-Add it under the ```orbs``` key in the config file. It should look similar to the node orb.
+Add [this](https://circleci.com/developer/orbs/orb/cypress-io/cypress) Cypress orb to the ```orbs``` key in the config file. It should look similar to the node orb.
 
 <h2> Install Cypress </h2>
 
@@ -313,25 +422,53 @@ To [install Cypress](https://docs.cypress.io/guides/getting-started/installing-c
 
 Cypress should be installed, and you should see a Cypress folder within your project now.
 
-Now, create a ```cypress.json``` file and add your ProjectID to that file. This should be available on the projects page in Cypress.
+Now, create a ```cypress.json``` file and add your ProjectID to that file. The projectID should be available on the projects page in Cypress.
 
 Let's add some tests to our project now.
 
-Naviage to the ```integration``` folder within the ```Cypress``` folder. Open the ```sample_spec.js``` file in your code editor. 
+Navigate to the ```integration``` folder within the ```Cypress``` folder. Open the ```sample_spec.js``` file in your code editor. 
 
 You'll see a couple of the tests that I've written. The first test will visit the Netlify website to make sure it is up and running.
 
-Where you see ```visit``` add the url for your app between the ```('')``` for each test.
+**TASK:** Where you see ```visit``` for each test add the url for your app between the ```('')``` for each test.
 
-**TASK** The test you will write will to be if the Todo list contains the ```<h1>``` header you created in your HTML. For instance, the header on my app sayd "My Todo List".
+**TASK:** The test you will write will check the Todo list to see if it contains the ```<h1>``` header you created in your HTML file. For instance, the header on my app says "My Todo List", so my test would look like:
 
-Use [this](https://docs.cypress.io/api/commands/contains.html#Syntax) doc to help with writing the test (it should be exactly the same as the other tests).
+    describe('My Second Test', () => {
+        it('finds the content "type"', () => {
+        cy.visit('https://priceless-johnson-edbe3b.netlify.app')
+    
+        cy.contains("My Todo List")
+        })
+    })
+
 
 Let's make sure our CircelCI config is ready before we push to GitHub.
 
-Go ahead and uncomment the last section for the ```cypress/run``` job. This job will help us with running our tests by using the Cypress orb. We will record these tests, and store them as artifacts in CircleCI.
+Go ahead and uncomment (hightlight the lines and use ```cmd + /``` to uncomment) the last section for the ```cypress/run``` job. This job will help us with running our tests by using the Cypress orb. We will record these tests, and store them as artifacts in CircleCI.
 
-Go ahead and push to GitHub. Once you do this, everything should pass. Check out the CircleCI artifacts for the recordings of the Cypress tests. 
+Add your changes to GitHub:
+
+    1. git add .
+    2. git commit -m "create a description here"
+    3. git push
+
+ Once you do this, everything should pass. Check out the CircleCI artifacts for the recordings of the Cypress tests. 
 
 Congrats on finishing this project!
+
+In this coding tutorial, learned how to:
+
+* Use the command line
+* Create and manipulate directories and files through the Terminal
+* Commit and push changes to GitHub from the command line
+* Write HTML/CSS/JavaScript
+* Add the project to CircleCI, and add to the CircleCI config file
+* Create an environment variable
+* Push your application to Netlify
+* Create tests with Cypress
+* Store test recordings as artifacts in CircleCI
+
+Hopefully, you have a better understanding of how teams use Git, GitHub, CircleCI, and testing tools. Of course things can get much more complicated than what we've seen in this tutorial, but I hope this has given you better insight into how teams operate with these tools.
+
 
