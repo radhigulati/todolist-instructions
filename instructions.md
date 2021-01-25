@@ -426,7 +426,7 @@ Now, create a ```cypress.json``` file and add your ProjectID to that file. The p
 
 Let's add some tests to our project now.
 
-Navigate to the ```integration``` folder within the ```Cypress``` folder. Open the ```sample_spec.js``` file in your code editor. 
+Navigate to the ```integration``` folder within the ```Cypress``` folder, and delete all the files except ```sample_spec.js```. Open the ```sample_spec.js``` file in VScode. 
 
 You'll see a couple of the tests that I've written. The first test will visit the Netlify website to make sure it is up and running.
 
