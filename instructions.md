@@ -1,6 +1,6 @@
 # To-do List Project
 ## Introduction
-In this coding tutorial, you will be creating [this](https://youtu.be/hSojFVFGOcw) web application. Throughout the tutprial you will be learning how to:
+In this coding tutorial, you will be creating [this](https://youtu.be/hSojFVFGOcw) web application. Throughout the tutprial you will be learn how to:
 
 * Use the command line
 * Create and manipulate directories and files through the Terminal
