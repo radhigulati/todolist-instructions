@@ -275,7 +275,7 @@ We then will add a class for the``` todo-item``` then append that new todo to th
 
 We create two buttons: a complete button and a delete button. Each time a new todo is created, a new complete button and a new delete button are created. When a new todo item is added to the ```div``` container, so are the two buttons.
 
-<h2> Sixth Assignemnt </h2>
+<h2> Create the delete button </h2>
 
 Each item in the todo list will have two buttons: a delete button, and a complete button. These buttons also consist of icons from the fontawesome icon directory.
 
