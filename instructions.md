@@ -47,8 +47,8 @@ To add the project to GitHub, follow the instructions below:
 
 You have now created an empty repository within GitHub.
 
-<span style="color:red"> **TASK:** </span> Now, we need to point our local repository to the remote repository. To do that type the following command in your terminal (make sure you are in your project directory)
-```git remote add origin [repository url]```
+<span style="color:red"> **TASK:** </span> Currently, our local repository is pointing to the repository you cloned from. We want to point to a clean repository in your GitHub. To do that type the following command in your terminal (make sure you are in your project directory)
+```git remote set-url origin [repository url]```
 
 The ```repository url``` will be ```git@github.com:[your github username]/[name of repo].git```. For example, my url would be ```git@github.com:radhigulati/todolist.git```
 
