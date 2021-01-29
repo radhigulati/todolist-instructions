@@ -43,9 +43,9 @@ To add the project to GitHub, follow the instructions below:
 
 <h2>Add project to GitHub</h2>
 
-<span style="color:red"> **TASK:** </span>Let's navigate to GitHub and create a new project. Within GitHub, navigate to the ```new``` button to create a new project. For the ```repository name``` use ```todolist```. You can add a description that says ```This project is a beginner git project.``` Make the project ```public```. Initialize this project with a ```README file```. Then click ```create repository```.
+<span style="color:red"> **TASK:** </span>Let's navigate to GitHub and create a new project. Within GitHub, navigate to the ```new``` button to create a new project. For the ```repository name``` use ```todolist```. You can add a description that says ```This project is a beginner git project.``` Make the project ```public```. Then click ```create repository```.
 
-You have now created an empty repository with a README file within GitHub.
+You have now created an empty repository within GitHub.
 
 <span style="color:red"> **TASK:** </span> Now, we need to point our local repository to the remote repository. To do that type the following command in your terminal (make sure you are in your project directory)
 ```git remote add origin [repository url]```
